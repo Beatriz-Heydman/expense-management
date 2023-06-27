@@ -1,5 +1,5 @@
 //Libs
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 //Types
 import { ButtonStyledProps } from "./types";

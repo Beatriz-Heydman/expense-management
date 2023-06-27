@@ -1,5 +1,5 @@
 //Libs
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 export const StyledMainContent = styled.main`
   max-width: 100vw;

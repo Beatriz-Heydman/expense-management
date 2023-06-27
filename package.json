@@ -12,13 +12,13 @@
   "dependencies": {
     "@types/react-icons": "^3.0.0",
     "@types/react-router-dom": "^5.3.3",
-    "@types/styled-components": "^5.1.26",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
     "react-router-dom": "5.3.3",
     "react-router-native": "^6.12.1",
-    "styled-components": "^6.0.0-rc.3"
+    "@types/styled-components": "^5.1.26",
+    "styled-components": "^5.3.8"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
