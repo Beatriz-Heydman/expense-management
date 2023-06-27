@@ -1,0 +1,10 @@
+{
+  "transactions": [
+    {
+      "transaction": "Desenvolvimento de site",
+      "transaction_value": 120000,
+      "transaction_type": "sell",
+      "transaction_date": "sell"
+    }
+  ]
+}
