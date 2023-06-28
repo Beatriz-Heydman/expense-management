@@ -32,7 +32,12 @@ export function Header() {
       >
         Nova transação
       </Button>
-      <Modal isOpen={isOpen} />
+      <Modal
+        isOpen={isOpen}
+        onClose={() => {
+          setIsOpen(false);
+        }}
+      />
     </StyledHeader>
   );
 }

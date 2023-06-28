@@ -1,7 +1,7 @@
 //Libs
 import styled from "styled-components";
 
-export const StyledModal = styled.div`
+export const Overlay = styled.div`
   background-color: #00000040;
   backdrop-filter: blur(8px);
   display: flex;

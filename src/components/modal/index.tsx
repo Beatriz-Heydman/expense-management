@@ -3,7 +3,7 @@ import { BsArrowUpCircle, BsArrowDownCircle } from "react-icons/bs";
 import { VscChromeClose } from "react-icons/vsc";
 
 //Styles
-import { StyledModal } from "./styles";
+import { Overlay } from "./styles";
 
 //Components
 import { Button } from "../button";
@@ -14,20 +14,24 @@ import { Typography } from "../typography";
 //Types
 import { ModalProps } from "./types";
 
-export function Modal({ isOpen }: ModalProps) {
+export function Modal({ isOpen, onClose }: ModalProps) {
   if (!isOpen) {
     return null;
   }
 
   return (
-    <StyledModal>
+    <Overlay
+      className="overlay"
+      onClick={(event) => {
+        const target = event.target as HTMLDivElement;
+
+        if (target.classList.contains("overlay")) {
+          onClose();
+        }
+      }}
+    >
       <div className="modal_container">
-        <button
-          className="close_icon"
-          onClick={() => {
-            console.log("fechou");
-          }}
-        >
+        <button className="close_icon" onClick={onClose}>
           <VscChromeClose color="#fff" fontSize="1.5rem" />
         </button>
         <Typography fontWeight="700" fontSize="1.5rem">
@@ -53,6 +57,6 @@ export function Modal({ isOpen }: ModalProps) {
         </Flex>
         <Button>Cadastrar</Button>
       </div>
-    </StyledModal>
+    </Overlay>
   );
 }
