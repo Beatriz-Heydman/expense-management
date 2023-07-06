@@ -4,7 +4,7 @@ import styled from "styled-components";
 //Types
 import { ButtonStyledProps } from "./types";
 
-export const StyledButton = styled.button<ButtonStyledProps>`
+export const Button = styled.button<ButtonStyledProps>`
   width: ${({ width = "100%" }) => width};
   display: flex;
   align-items: center;

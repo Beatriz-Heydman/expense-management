@@ -7,12 +7,16 @@ import { Flex } from "../flex";
 
 //Types
 import { TransactionCardProps } from "./types";
+import { format } from "date-fns";
+import { formatCurrency } from "../../shared/formatters/format-currency";
 
-export function TransactionCard({
-  category,
-  description,
-  price,
-}: TransactionCardProps) {
+export function TransactionCard({ transaction }: TransactionCardProps) {
+  const valueNum = Number(transaction.transaction_value);
+
+  const isNegative = transaction.transaction_type === "outflow";
+
+  const valueInReal = formatCurrency(valueNum);
+
   return (
     <StyledTransactionCard>
       <Flex
@@ -20,17 +24,21 @@ export function TransactionCard({
         justifyContent="space-between"
         gap="1rem"
       >
-        <Typography fontWeight="400">{description}</Typography>
-        <Typography fontWeight="400" color="#0f0">
-          {price}
+        <Typography fontWeight="400">{transaction.transaction}</Typography>
+        <Typography fontWeight="400" color={isNegative ? "#f00" : "#0f0"}>
+          {isNegative && "-"} {valueInReal}
         </Typography>
       </Flex>
       <Flex
         className="transaction_date_info_content"
         justifyContent="space-between"
       >
-        <Typography fontWeight="400">{category}</Typography>
-        <Typography fontWeight="400">13/04/2022</Typography>
+        <Typography fontWeight="400">
+          {transaction.transaction_category}
+        </Typography>
+        <Typography fontWeight="400">
+          {format(transaction.transaction_date, "dd/MM/yyyy")}
+        </Typography>
       </Flex>
     </StyledTransactionCard>
   );

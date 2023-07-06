@@ -10,6 +10,10 @@ export const Input = styled.input`
   color: #fff;
   outline: none;
 
+  &[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(50%);
+  }
+
   @media (min-width: 600px) {
     width: 100%;
   }

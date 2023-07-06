@@ -1,10 +1,63 @@
 {
+  "meta": {
+    "totalItems": 0,
+    "page": 1,
+    "itemsPerPage": 10,
+    "totalPages": 0
+  },
   "transactions": [
     {
+      "id": 1,
       "transaction": "Desenvolvimento de site",
-      "transaction_value": 120000,
-      "transaction_type": "sell",
-      "transaction_date": "sell"
+      "transaction_value": "1200.00",
+      "transaction_type": "entry",
+      "transaction_date": 1686418538,
+      "transaction_category": "Trabalho"
+    },
+    {
+      "id": 2,
+      "transaction": "Jogos de xbox",
+      "transaction_value": "950.00",
+      "transaction_type": "outflow",
+      "transaction_date": 1686850538,
+      "transaction_category": "Lazer"
+    },
+    {
+      "transaction": "transação teste",
+      "transaction_value": "1000",
+      "transaction_category": "trabalho",
+      "transaction_type": "entry",
+      "transaction_date": 1688515200000,
+      "id": 3
+    },
+    {
+      "transaction": "teste 3",
+      "transaction_value": "234",
+      "transaction_category": "223424",
+      "transaction_type": "entry",
+      "transaction_date": 1689984000000,
+      "id": 4
+    },
+    {
+      "transaction": "teste 4 ",
+      "transaction_value": "12345",
+      "transaction_category": "teste",
+      "transaction_type": "entry",
+      "transaction_date": 1688606853154,
+      "id": 5
+    },
+    {
+      "transaction": "teste 5 ",
+      "transaction_value": "123",
+      "transaction_category": "teste novo",
+      "transaction_type": "entry",
+      "transaction_date": 1688606896151,
+      "id": 6
     }
-  ]
+  ],
+  "pagination": {
+    "path": "/transactions",
+    "perPageParam": "itemsPerPage",
+    "totalParam": "totalItems"
+  }
 }

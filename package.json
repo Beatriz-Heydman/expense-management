@@ -10,14 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/date-fns": "^2.6.0",
     "@types/react-icons": "^3.0.0",
     "@types/react-router-dom": "^5.3.3",
+    "@types/styled-components": "^5.1.26",
+    "axios": "^1.4.0",
+    "date-fns": "^2.30.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
     "react-router-dom": "5.3.3",
     "react-router-native": "^6.12.1",
-    "@types/styled-components": "^5.1.26",
     "styled-components": "^5.3.8"
   },
   "devDependencies": {
