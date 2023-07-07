@@ -1,7 +1,7 @@
 //Libs
 import { BsArrowUpCircle, BsArrowDownCircle } from "react-icons/bs";
 import { AiOutlineDollarCircle } from "react-icons/ai";
-import { useContext, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 //Styles
 import { StyledMainContent } from "./styles";
@@ -12,16 +12,23 @@ import { Input } from "../input";
 import { Flex } from "../flex";
 import { Button } from "../button";
 import { TransactionCard } from "../transaction-card";
+import { Typography } from "../typography";
 
 //Services
 import { api } from "../../services/api";
 
 //Shared
 import { formatCurrency } from "../../shared/formatters/format-currency";
-import { TransactionsContext } from "../../contexts/transactions-context";
+
+//Hooks
+import { useTransactions } from "../../hooks/use-transactions";
 
 export function MainContent() {
-  const { transactions, setTransactions } = useContext(TransactionsContext);
+  const { transactions, setTransactions } = useTransactions();
+
+  const [isFiltering, setIsFiltering] = useState(false);
+
+  const [searchTransaction, setSearchTransaction] = useState("");
 
   function getTotalTransactionValue() {
     let totalValue = 0;
@@ -53,7 +60,7 @@ export function MainContent() {
   const totalOutFlowInReal = formatCurrency(transactionValue.totalOutflow);
   const totalInReal = formatCurrency(transactionValue.totalValue);
 
-  async function getMainContent() {
+  async function getTransactions() {
     try {
       const response = await api.get("/transactions");
       setTransactions(response.data);
@@ -62,8 +69,22 @@ export function MainContent() {
     }
   }
 
+  async function searchTransactionByName(transactionName: string) {
+    try {
+      const response = await api.get("/transactions", {
+        params: {
+          transaction_like: transactionName,
+        },
+      });
+
+      setTransactions(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   useEffect(() => {
-    getMainContent();
+    getTransactions();
   }, []);
 
   return (
@@ -87,24 +108,54 @@ export function MainContent() {
         />
       </div>
 
-      <Flex className="search_container" gap="1rem">
-        <Input placeholder="Busque uma transação" />
+      <Flex direction="column" gap="1rem" className="search_container">
+        <Flex style={{ width: "100%" }} gap="1rem">
+          <Input
+            placeholder="Busque uma transação"
+            value={searchTransaction}
+            onChange={(event) => {
+              setSearchTransaction(event.currentTarget.value);
+            }}
+          />
 
-        <Button
-          className="search_button"
-          color="#015F43"
-          backgroundColor="transparent"
-          border="solid 2px #015F43"
-          width="fit-content"
-        >
-          Buscar
-        </Button>
+          <Button
+            className="search_button"
+            color="#015F43"
+            backgroundColor="transparent"
+            border="solid 2px #015F43"
+            width="fit-content"
+            onClick={() => {
+              setIsFiltering(true);
+
+              searchTransactionByName(searchTransaction);
+            }}
+          >
+            Buscar
+          </Button>
+        </Flex>
+        {isFiltering && (
+          <Button
+            onClick={() => {
+              setSearchTransaction("");
+              getTransactions();
+              setIsFiltering(false);
+            }}
+            width="fit-content"
+            style={{ marginRight: "auto" }}
+          >
+            Limpar filtros
+          </Button>
+        )}
       </Flex>
 
       <Flex direction="column" gap="0.5rem" style={{ paddingInline: "1rem" }}>
-        {transactions.map((transaction, index) => (
-          <TransactionCard key={index} transaction={transaction} />
-        ))}
+        {transactions.length >= 1 ? (
+          transactions.map((transaction, index) => (
+            <TransactionCard key={index} transaction={transaction} />
+          ))
+        ) : (
+          <Typography>Não há resultados para a busca</Typography>
+        )}
       </Flex>
     </StyledMainContent>
   );

@@ -7,52 +7,36 @@
   },
   "transactions": [
     {
-      "id": 1,
-      "transaction": "Desenvolvimento de site",
-      "transaction_value": "1200.00",
-      "transaction_type": "entry",
-      "transaction_date": 1686418538,
-      "transaction_category": "Trabalho"
+      "transaction": "N/A",
+      "transaction_value": 0,
+      "transaction_category": "N/A",
+      "transaction_type": "N/A",
+      "transaction_date": 1688687756231,
+      "id": 1
     },
     {
-      "id": 2,
-      "transaction": "Jogos de xbox",
-      "transaction_value": "950.00",
-      "transaction_type": "outflow",
-      "transaction_date": 1686850538,
-      "transaction_category": "Lazer"
+      "transaction": "N/A",
+      "transaction_value": 0,
+      "transaction_category": "N/A",
+      "transaction_type": "N/A",
+      "transaction_date": 1688687763976,
+      "id": 2
     },
     {
-      "transaction": "transação teste",
-      "transaction_value": "1000",
-      "transaction_category": "trabalho",
-      "transaction_type": "entry",
-      "transaction_date": 1688515200000,
+      "transaction": "jogo",
+      "transaction_value": "5000",
+      "transaction_category": "N/A",
+      "transaction_type": "N/A",
+      "transaction_date": 1688687860049,
       "id": 3
     },
     {
-      "transaction": "teste 3",
-      "transaction_value": "234",
-      "transaction_category": "223424",
-      "transaction_type": "entry",
-      "transaction_date": 1689984000000,
+      "transaction": "apê",
+      "transaction_value": "15000",
+      "transaction_category": "N/A",
+      "transaction_type": "N/A",
+      "transaction_date": 1688687870555,
       "id": 4
-    },
-    {
-      "transaction": "teste 4 ",
-      "transaction_value": "12345",
-      "transaction_category": "teste",
-      "transaction_type": "entry",
-      "transaction_date": 1688606853154,
-      "id": 5
-    },
-    {
-      "transaction": "teste 5 ",
-      "transaction_value": "123",
-      "transaction_category": "teste novo",
-      "transaction_type": "entry",
-      "transaction_date": 1688606896151,
-      "id": 6
     }
   ],
   "pagination": {

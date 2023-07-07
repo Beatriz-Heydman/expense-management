@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 export const StyledTransactionCard = styled.div`
-  width: 100%;
+  width: 95%;
   background-color: #2d2d32;
   padding: 1rem;
   display: flex;
@@ -31,5 +31,19 @@ export const StyledTransactionCard = styled.div`
     .transaction_date_info_content {
       width: 100%;
     }
+  }
+`;
+
+export const TrashButton = styled.button`
+  width: 5%;
+  background: none;
+  border: none;
+  transition: all ease 0.2s;
+  cursor: pointer;
+  color: #fff;
+
+  &:hover {
+    scale: 1.2;
+    color: red;
   }
 `;

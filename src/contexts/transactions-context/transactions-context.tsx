@@ -1,6 +1,9 @@
+//Libs
 import { createContext, useState } from "react";
+
+//Types
 import { TransactionsContextValues, TransactionsProviderProps } from "./types";
-import { Transaction } from "../components/main-content/types";
+import { Transaction } from "../../components/main-content/types";
 
 export const TransactionsContext = createContext(
   {} as TransactionsContextValues

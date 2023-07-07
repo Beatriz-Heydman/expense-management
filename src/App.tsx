@@ -2,7 +2,9 @@
 import { Header } from "./components/header";
 import { Flex } from "./components/flex";
 import { MainContent } from "./components/main-content";
-import { TransactionsProvider } from "./contexts/transactions-context";
+
+//Contexts
+import { TransactionsProvider } from "./contexts/transactions-context/transactions-context";
 
 function App() {
   return (

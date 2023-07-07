@@ -1,7 +1,7 @@
 //Libs
 import { BsArrowUpCircle, BsArrowDownCircle } from "react-icons/bs";
 import { VscChromeClose } from "react-icons/vsc";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 //Styles
 import { Overlay } from "./styles";
@@ -14,13 +14,17 @@ import { Typography } from "../typography";
 
 //Types
 import { ModalProps } from "./types";
+
+//Services
 import { api } from "../../services/api";
-import { TransactionsContext } from "../../contexts/transactions-context";
+
+//Hooks
+import { useTransactions } from "../../hooks/use-transactions";
 
 export function Modal({ isOpen, onClose }: ModalProps) {
   const [descriptionValue, setDescriptionValue] = useState("");
 
-  const { setTransactions } = useContext(TransactionsContext);
+  const { setTransactions } = useTransactions();
 
   const [priceValue, setPriceValue] = useState("");
 
