@@ -1,10 +1,10 @@
 //Libs
 import ReactDOM from "react-dom/client";
 
-//Components
+//App
 import App from "./App.tsx";
 
-//Styles
+//Css
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
