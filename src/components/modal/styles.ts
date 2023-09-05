@@ -23,7 +23,8 @@ export const Overlay = styled.div`
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
-    padding-inline: 2rem;
+    padding: 2rem;
+    border-radius: 0.75rem;
 
     .close_icon {
       background: none;
