@@ -9,7 +9,8 @@ Esta é uma aplicação de um sistema de gerenciamento de custos, usando uma `AP
 
 1. Clone o projeto 
 2. Instale as dependências usando o comando
-`` 
+
+shell`` 
 yarn 
 ``
 4. Inicie a API usando o comando 
