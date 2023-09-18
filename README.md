@@ -12,7 +12,6 @@ Esta é uma aplicação de um sistema de gerenciamento de custos, usando uma `AP
 shell
 ``
 yarn
-
 ``
 
 4. Inicie a API usando o comando 
