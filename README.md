@@ -9,16 +9,14 @@ Esta é uma aplicação de um sistema de gerenciamento de custos, usando uma `AP
 
 1. Clone o projeto 
 2. Instale as dependências usando o comando
-
-shell`` 
+shell
 yarn 
-``
-4. Inicie a API usando o comando 
-``
-json-server --watch db.json --port 5001
-``
 
-5. Execute o projeto com o comando 
-``
-yarn dev 
-``
+3. Inicie a API usando o comando 
+shell
+yarn json-server --watch db.json --port 5001 
+
+4. Execute o projeto com o comando 
+shell
+yarn dev 
+
