@@ -22,8 +22,16 @@ export const StyledMainContent = styled.main`
     padding-inline: 1rem;
   }
 
+  .search_content {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
   @media (max-width: 600px) {
-    .search_container {
+    .search_content {
       flex-direction: column;
     }
   }

@@ -3,14 +3,14 @@ import { BsArrowUpCircle, BsArrowDownCircle } from "react-icons/bs";
 import { VscChromeClose } from "react-icons/vsc";
 import { useState } from "react";
 
-//Styles
-import { Overlay } from "./styles";
-
 //Components
 import { Button } from "../button";
 import { Flex } from "../flex";
 import { Input } from "../input";
 import { Typography } from "../typography";
+
+//Styles
+import { Overlay } from "./styles";
 
 //Types
 import { ModalProps } from "./types";

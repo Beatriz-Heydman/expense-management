@@ -2,12 +2,12 @@
 import { format } from "date-fns";
 import { BsTrash } from "react-icons/bs";
 
-//Styles
-import { StyledTransactionCard, TrashButton } from "./styles";
-
 //Components
 import { Typography } from "../typography";
 import { Flex } from "../flex";
+
+//Styles
+import { StyledTransactionCard, TrashButton } from "./styles";
 
 //Types
 import { TransactionCardProps } from "./types";

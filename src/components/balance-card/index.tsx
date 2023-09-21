@@ -1,9 +1,9 @@
-//Styles
-import { StyledBalanceCard } from "./styles";
-
 //Components
 import { Flex } from "../flex";
 import { Typography } from "../typography";
+
+//Styles
+import { StyledBalanceCard } from "./styles";
 
 //Types
 import { BalanceCardProps } from "./types";

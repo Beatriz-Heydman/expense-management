@@ -3,9 +3,6 @@ import { BsArrowUpCircle, BsArrowDownCircle } from "react-icons/bs";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 import { useEffect, useState } from "react";
 
-//Styles
-import { StyledMainContent } from "./styles";
-
 //Components
 import { BalanceCard } from "../balance-card";
 import { Input } from "../input";
@@ -13,6 +10,9 @@ import { Flex } from "../flex";
 import { Button } from "../button";
 import { TransactionCard } from "../transaction-card";
 import { Typography } from "../typography";
+
+//Styles
+import { StyledMainContent } from "./styles";
 
 //Services
 import { api } from "../../services/api";
@@ -55,10 +55,11 @@ export function MainContent() {
   }
 
   const transactionValue = getTotalTransactionValue();
-
   const totalEntryInReal = formatCurrency(transactionValue.totalEntry);
   const totalOutFlowInReal = formatCurrency(transactionValue.totalOutflow);
-  const totalInReal = formatCurrency(transactionValue.totalValue);
+  const totalInReal = formatCurrency(
+    transactionValue.totalEntry - transactionValue.totalOutflow
+  );
 
   async function getTransactions() {
     try {
@@ -109,7 +110,7 @@ export function MainContent() {
       </div>
 
       <Flex direction="column" gap="1rem" className="search_container">
-        <Flex style={{ width: "100%" }} gap="1rem">
+        <div className="search_content">
           <Input
             placeholder="Busque uma transação"
             value={searchTransaction}
@@ -132,7 +133,7 @@ export function MainContent() {
           >
             Buscar
           </Button>
-        </Flex>
+        </div>
         {isFiltering && (
           <Button
             onClick={() => {
@@ -148,7 +149,11 @@ export function MainContent() {
         )}
       </Flex>
 
-      <Flex direction="column" gap="0.5rem" style={{ paddingInline: "1rem" }}>
+      <Flex
+        direction="column"
+        gap="0.5rem"
+        style={{ paddingInline: "1rem", paddingBottom: "1.5rem" }}
+      >
         {transactions.length >= 1 ? (
           transactions.map((transaction, index) => (
             <TransactionCard key={index} transaction={transaction} />

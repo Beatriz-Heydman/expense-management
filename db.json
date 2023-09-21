@@ -7,36 +7,20 @@
   },
   "transactions": [
     {
-      "transaction": "N/A",
-      "transaction_value": 0,
-      "transaction_category": "N/A",
-      "transaction_type": "N/A",
-      "transaction_date": 1688687756231,
+      "transaction": "Trabalho",
+      "transaction_value": "3000",
+      "transaction_category": "Salário",
+      "transaction_type": "entry",
+      "transaction_date": 1693872000000,
       "id": 1
     },
     {
-      "transaction": "N/A",
-      "transaction_value": 0,
-      "transaction_category": "N/A",
-      "transaction_type": "N/A",
-      "transaction_date": 1688687763976,
+      "transaction": "lllllllllllllll",
+      "transaction_value": "500",
+      "transaction_category": "çççççççç",
+      "transaction_type": "outflow",
+      "transaction_date": 1693872000000,
       "id": 2
-    },
-    {
-      "transaction": "jogo",
-      "transaction_value": "5000",
-      "transaction_category": "N/A",
-      "transaction_type": "N/A",
-      "transaction_date": 1688687860049,
-      "id": 3
-    },
-    {
-      "transaction": "apê",
-      "transaction_value": "15000",
-      "transaction_category": "N/A",
-      "transaction_type": "N/A",
-      "transaction_date": 1688687870555,
-      "id": 4
     }
   ],
   "pagination": {
