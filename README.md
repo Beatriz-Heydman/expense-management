@@ -15,9 +15,6 @@
 
 Esta é uma aplicação de um sistema de gerenciamento de custos, usando uma `API` fake do `JSON-server` para gerenciar os dados.
 
-### Demonstração
-
-
 ### Como executar o projeto
 
 1. Clone o projeto 
